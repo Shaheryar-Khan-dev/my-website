@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Summit & Clarke Legal Associates</title>
+  <meta name="description" content="Contact Summit & Clarke Legal Associates to schedule a confidential consultation with a senior attorney. Available in New York, London, Singapore, and Dubai." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="chat-bubble" onclick="toggleChat()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="chat-window" id="chatWindow"><div class="chat-header"><span>Live Support</span><button onclick="toggleChat()">✕</button></div><div class="chat-body"><div class="chat-msg bot">Hello! How can we assist you today?</div></div><div class="chat-input"><input type="text" placeholder="Type a message…" id="chatInput" onkeydown="sendChat(event)" /><button onclick="sendChat({key:'Enter'})">→</button></div></div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">⚖</span><div><div class="logo-main">Summit & Clarke</div><div class="logo-sub">Legal Associates</div></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="attorneys.html">Attorneys</a></li><li><a href="cases.html">Case Results</a></li><li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Book Consultation</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-label">Get in Touch</div>
+  <h1>Contact Our Firm</h1>
+  <p>Schedule a confidential consultation with a senior attorney. We respond to all initial enquiries within one business day.</p>
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></div>
+</header>
+
+<!-- CONTACT SECTION -->
+<section class="section" style="background:var(--offwhite)">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- CONTACT INFO -->
+      <div>
+        <div class="section-label">Office Locations</div>
+        <h3 style="font-family:var(--font-serif);font-size:2rem;color:var(--navy);margin-bottom:2rem">How to Reach Us</h3>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-text">
+            <strong>New York (Headquarters)</strong>
+            <span>1221 Avenue of the Americas, 38th Floor<br/>New York, NY 10020, United States</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-text">
+            <strong>London Office</strong>
+            <span>30 St Mary Axe (The Gherkin), Level 24<br/>London, EC3A 8BF, United Kingdom</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-text">
+            <strong>Singapore Office</strong>
+            <span>Marina Bay Financial Centre, Tower 1, Level 29<br/>Singapore, 018989</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div class="contact-detail-text">
+            <strong>Telephone</strong>
+            <span>Main: +1 (212) 540-7800<br/>Fax: +1 (212) 540-7899</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉</div>
+          <div class="contact-detail-text">
+            <strong>Email</strong>
+            <span>General: counsel@summitclarke.com<br/>New Business: intake@summitclarke.com</span>
+          </div>
+        </div>
+
+        <h4 style="font-family:var(--font-sans);font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin:2rem 0 0.75rem">Business Hours</h4>
+        <table class="hours-table">
+          <tr><td>Monday – Thursday</td><td>8:00 AM – 7:00 PM</td></tr>
+          <tr><td>Friday</td><td>8:00 AM – 6:00 PM</td></tr>
+          <tr><td>Saturday</td><td>9:00 AM – 1:00 PM (by appointment)</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+          <tr><td style="border:none;padding-top:0.75rem;color:var(--gold)" colspan="2">24/7 emergency legal support available for existing clients.</td></tr>
+        </table>
+
+        <div style="margin-top:2rem;padding:1.5rem;background:var(--navy);border-left:3px solid var(--gold)">
+          <p style="font-size:0.88rem;color:rgba(255,255,255,0.7);line-height:1.8"><strong style="color:var(--gold)">Confidentiality Notice:</strong> All communications submitted through this form are protected by attorney-client privilege from the moment of submission. Your information will not be shared with any third party without your express written consent.</p>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="contact-form-wrap">
+        <h3>Schedule a Consultation</h3>
+        <form id="contactForm" onsubmit="return validateContact(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName">Full Name *</label>
+              <input type="text" id="contactName" placeholder="Your full name" />
+              <div class="field-error" id="contactNameErr"></div>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email Address *</label>
+              <input type="email" id="contactEmail" placeholder="your@email.com" />
+              <div class="field-error" id="contactEmailErr"></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactPhone">Phone Number *</label>
+              <input type="tel" id="contactPhone" placeholder="+1 (212) 000-0000" />
+              <div class="field-error" id="contactPhoneErr"></div>
+            </div>
+            <div class="form-group">
+              <label for="contactPractice">Practice Area</label>
+              <select id="contactPractice">
+                <option value="">Select area of law…</option>
+                <option>Corporate Law</option>
+                <option>Criminal Defense</option>
+                <option>Family Law</option>
+                <option>Immigration Law</option>
+                <option>Real Estate Law</option>
+                <option>Intellectual Property</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Brief Description of Matter *</label>
+            <textarea id="contactMessage" rows="6" placeholder="Please provide a brief, confidential description of your legal matter so we may assign the most appropriate attorney for your consultation…"></textarea>
+            <div class="field-error" id="contactMessageErr"></div>
+          </div>
+          <div class="form-group">
+            <label for="contactPreferred">Preferred Consultation Format</label>
+            <select id="contactPreferred">
+              <option>In-Person (New York office)</option>
+              <option>Video Conference (Zoom / Teams)</option>
+              <option>Telephone</option>
+              <option>No Preference</option>
+            </select>
+          </div>
+          <p class="form-note">Fields marked * are required. By submitting this form, you acknowledge that you have read and agree to our <a href="#" style="color:var(--navy);text-decoration:underline">Privacy Policy</a>. This form is encrypted and transmitted securely.</p>
+          <button type="submit" class="btn-gold" style="width:100%;justify-content:center">Submit Consultation Request →</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <strong>Thank you for contacting Summit & Clarke Legal Associates.</strong><br/>
+          Your enquiry has been received and assigned a reference number. A member of our intake team will contact you within one business day to confirm your consultation appointment. For urgent matters, please call +1 (212) 540-7800 directly.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP PLACEHOLDER -->
+<div class="map-placeholder">
+  <span style="font-family:var(--font-serif);color:rgba(255,255,255,0.15);font-size:1.5rem">Interactive Map — Summit & Clarke New York HQ</span>
+</div>
+
+<!-- GLOBAL OFFICES -->
+<section class="section" style="background:var(--navy)">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Global Presence</div>
+    <h2 class="section-title" style="color:var(--white)">Our Offices Worldwide</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem" class="offices-grid">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:2rem;text-align:center" class="reveal">
+        <div style="font-size:2rem;margin-bottom:1rem">🗽</div>
+        <h4 style="font-family:var(--font-serif);font-size:1.2rem;color:var(--white);margin-bottom:0.5rem">New York</h4>
+        <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.7">1221 Avenue of the Americas<br/>New York, NY 10020</p>
+        <div style="margin-top:1rem;font-size:0.75rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase">Headquarters</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:2rem;text-align:center" class="reveal">
+        <div style="font-size:2rem;margin-bottom:1rem">🎡</div>
+        <h4 style="font-family:var(--font-serif);font-size:1.2rem;color:var(--white);margin-bottom:0.5rem">London</h4>
+        <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.7">30 St Mary Axe, Level 24<br/>London, EC3A 8BF</p>
+        <div style="margin-top:1rem;font-size:0.75rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase">Est. 2008</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:2rem;text-align:center" class="reveal">
+        <div style="font-size:2rem;margin-bottom:1rem">🌏</div>
+        <h4 style="font-family:var(--font-serif);font-size:1.2rem;color:var(--white);margin-bottom:0.5rem">Singapore</h4>
+        <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.7">Marina Bay Financial Centre<br/>Singapore, 018989</p>
+        <div style="margin-top:1rem;font-size:0.75rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase">Est. 2014</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:2rem;text-align:center" class="reveal">
+        <div style="font-size:2rem;margin-bottom:1rem">🏙</div>
+        <h4 style="font-family:var(--font-serif);font-size:1.2rem;color:var(--white);margin-bottom:0.5rem">Dubai</h4>
+        <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.7">Dubai International Financial Centre<br/>Gate Village, Tower 6</p>
+        <div style="margin-top:1rem;font-size:0.75rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase">Est. 2016</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-section">
+  <div class="container newsletter-inner">
+    <div><h3>Stay Informed on Legal Developments</h3><p>Subscribe to our quarterly legal briefing for insights, case updates, and regulatory news.</p></div>
+    <form class="newsletter-form" onsubmit="submitNewsletter(event)"><input type="email" placeholder="Your professional email address" required /><button type="submit" class="btn-gold">Subscribe</button></form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand"><div class="logo" style="margin-bottom:1rem"><span class="logo-icon">⚖</span><div><div class="logo-main">Summit & Clarke</div><div class="logo-sub">Legal Associates</div></div></div><p>Providing world-class legal representation with integrity, precision, and an unwavering commitment to justice since 1998.</p><a href="#" class="btn-outline-sm">⬇ Download Brochure</a></div>
+    <div class="footer-col"><h4>Practice Areas</h4><ul><li><a href="services.html">Corporate Law</a></li><li><a href="services.html">Criminal Defense</a></li><li><a href="services.html">Family Law</a></li><li><a href="services.html">Immigration Law</a></li><li><a href="services.html">Real Estate Law</a></li><li><a href="services.html">Intellectual Property</a></li></ul></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="about.html">About the Firm</a></li><li><a href="attorneys.html">Our Attorneys</a></li><li><a href="cases.html">Case Results</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul class="footer-contact"><li>📍 1221 Avenue of the Americas,<br/>New York, NY 10020</li><li>📞 +1 (212) 540-7800</li><li>✉ counsel@summitclarke.com</li><li>🕐 Mon–Fri: 8:00 AM – 7:00 PM</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2024 Summit & Clarke Legal Associates. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p></div>
+</footer>
+
+<style>
+@media(max-width:768px){.offices-grid{grid-template-columns:1fr 1fr !important}}
+@media(max-width:480px){.offices-grid{grid-template-columns:1fr !important}}
+</style>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Attorneys | Summit & Clarke Legal Associates</title>
+  <meta name="description" content="Meet the exceptional legal team at Summit & Clarke Legal Associates — senior partners, associates, and specialists across all practice areas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .atty-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+    .atty-card { background: var(--white); border: 1px solid var(--gray-mid); overflow: hidden; transition: var(--transition); }
+    .atty-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .atty-head { background: var(--navy); padding: 2.5rem 2rem; text-align: center; position: relative; overflow: hidden; }
+    .atty-head::before { content: ''; position: absolute; top: -60px; right: -60px; width: 180px; height: 180px; border-radius: 50%; background: rgba(201,162,39,0.06); }
+    .atty-initials { width: 80px; height: 80px; border-radius: 50%; background: var(--gold); color: var(--navy); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; margin: 0 auto 1rem; position: relative; z-index: 1; }
+    .atty-name { font-family: var(--font-serif); font-size: 1.25rem; color: var(--white); font-weight: 600; margin-bottom: 0.25rem; }
+    .atty-title { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .atty-body { padding: 1.75rem; }
+    .atty-spec { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+    .spec-tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; background: var(--offwhite); color: var(--navy); padding: 0.25rem 0.6rem; }
+    .atty-bio { font-size: 0.88rem; color: var(--gray-text); line-height: 1.75; margin-bottom: 1.25rem; }
+    .atty-meta { display: flex; gap: 1.5rem; border-top: 1px solid var(--gray-mid); padding-top: 1rem; }
+    .atty-meta-item { text-align: center; flex: 1; }
+    .atty-meta-item strong { display: block; font-family: var(--font-serif); font-size: 1.3rem; color: var(--navy); }
+    .atty-meta-item span { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-text); }
+    .filter-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 3rem; }
+    .filter-btn { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.55rem 1.25rem; border: 1px solid var(--gray-mid); background: var(--white); color: var(--gray-text); cursor: pointer; transition: var(--transition); }
+    .filter-btn:hover, .filter-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    @media(max-width:768px){.atty-grid{grid-template-columns:1fr}}
+    @media(max-width:1024px){.atty-grid{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+
+<div class="chat-bubble" onclick="toggleChat()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="chat-window" id="chatWindow"><div class="chat-header"><span>Live Support</span><button onclick="toggleChat()">✕</button></div><div class="chat-body"><div class="chat-msg bot">Hello! How can we assist you today?</div></div><div class="chat-input"><input type="text" placeholder="Type a message…" id="chatInput" onkeydown="sendChat(event)" /><button onclick="sendChat({key:'Enter'})">→</button></div></div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">⚖</span><div><div class="logo-main">Summit & Clarke</div><div class="logo-sub">Legal Associates</div></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="attorneys.html" class="active">Attorneys</a></li><li><a href="cases.html">Case Results</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Book Consultation</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-label">Legal Team</div>
+  <h1>Our Attorneys</h1>
+  <p>42 exceptional legal minds united by a common purpose — delivering the highest standard of legal representation to every client.</p>
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Attorneys</span></div>
+</header>
+
+<section class="section" style="background:var(--offwhite)">
+  <div class="container">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterAttorneys('all', this)">All Attorneys</button>
+      <button class="filter-btn" onclick="filterAttorneys('corporate', this)">Corporate</button>
+      <button class="filter-btn" onclick="filterAttorneys('criminal', this)">Criminal Defense</button>
+      <button class="filter-btn" onclick="filterAttorneys('family', this)">Family Law</button>
+      <button class="filter-btn" onclick="filterAttorneys('immigration', this)">Immigration</button>
+      <button class="filter-btn" onclick="filterAttorneys('ip', this)">Intellectual Property</button>
+    </div>
+
+    <div class="atty-grid" id="attyGrid">
+
+      <div class="atty-card reveal" data-area="corporate">
+        <div class="atty-head">
+          <div class="atty-initials">ES</div>
+          <div class="atty-name">Eleanor Summit</div>
+          <div class="atty-title">Founding Senior Partner</div>
+        </div>
+        <div class="atty-body">
+          <div class="atty-spec"><span class="spec-tag">Corporate Law</span><span class="spec-tag">Securities</span><span class="spec-tag">M&A</span></div>
+          <p class="atty-bio">Yale Law, J.D. magna cum laude. Former Assistant U.S. Attorney, SDNY. Named to the National Law Journal's "Top 40 Most Influential Lawyers" four times. Led the firm's landmark $4.2B Harrington-Axiom merger. Chambers USA Band 1 rated.</p>
+          <div class="atty-meta">
+            <div class="atty-meta-item"><strong>26</strong><span>Years Exp.</span></div>
+            <div class="atty-meta-item"><strong>240+</strong><span>Transactions</span></div>
+            <div class="atty-meta-item"><strong>Band 1</strong><span>Chambers</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="atty-card reveal" data-area="criminal">
+        <div class="atty-head" style="background:var(--navy-light)">
+          <div class="atty-initials">JC</div>
+          <div class="atty-name">James Clarke</div>
+          <div class="atty-title">Founding Senior Partner</div>
+        </div>
+        <div class="atty-body">
+          <div class="atty-spec"><span class="spec-tag">Criminal Defense</span><span class="spec-tag">Federal Litigation</span><span class="spec-tag">Appeals</span></div>
+          <p class="atty-bio">Harvard Law, J.D. Harvard Law Review Editor. Former federal public defender turned premier private litigator. Fellow of the American College of Trial Lawyers. Has tried 320+ cases in federal and state courts with one of the highest acquittal rates nationally.</p>
+          <div class="atty-meta">
+            <div class="atty-meta-item"><strong>28</strong><span>Years Exp.</span></div>
+            <div class="atty-meta-item"><strong>320+</strong><span>Cases Tried</span></div>
+            <div class="atty-meta-item"><strong>Fellow</strong><span>ACTL</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="atty-card reveal" data-area="immigration">
+        <div class="atty-head" style="background:#1a2a3a">
+          <div class="atty-initials">PM</div>
+          <div class="atty-name">Dr. Priya Mehta</div>
+          <div class="atty-title">Managing Partner</div>
+        </div>
+        <div class="atty-body">
+          <div class="atty-spec"><span class="spec-tag">Immigration</span><span class="spec-tag">International Law</span><span class="spec-tag">Cross-Border</span></div>
+          <p class="atty-bio">Oxford BCL, Columbia LL.M., Ph.D. in International Law. Oversees four international offices. Fluent in English, Hindi, French, and Mandarin. Ranked in Legal 500's "International Trade & Immigration" for 8 consecutive years. Recipient of the ABA's International Law Award 2022.</p>
+          <div class="atty-meta">
+            <div class="atty-meta-item"><strong>18</strong><span>Years Exp.</span></div>
+            <div class="atty-meta-item"><strong>60+</strong><span>Jurisdictions</span></div>
+            <div class="atty-meta-item"><strong>4</strong><span>Languages</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="atty-card reveal" data-area="corporate">
+        <div class="atty-head" style="background:#12223a">
+          <div class="atty-initials">RB</div>
+          <div class="atty-name">Richard Bancroft</div>
+          <div class="atty-title">Senior Partner — Corporate Finance</div>
+        </div>
+        <div class="atty-body">
+          <div class="atty-spec"><span class="spec-tag">Corporate Finance</span><span class="spec-tag">Private Equity</span><span class="spec-tag">Restructuring</span></div>
+          <p class="atty-bio">Georgetown Law, J.D. with distinction. 20 years advising leading private equity sponsors and institutional lenders on leveraged buyouts, fund formation, and complex restructurings. Previously General Counsel at Merrill Lynch Capital Markets. Chambers USA Band 2.</p>
+          <div class="atty-meta">
+            <div class="atty-meta-item"><strong>20</strong><span>Years Exp.</span></div>
+            <div class="atty-meta-item"><strong>$15B+</strong><span>Deals Closed</span></div>
+            <div class="atty-meta-item"><strong>Band 2</strong><span>Chambers</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="atty-card reveal" data-area="family">
+        <div class="atty-head" style="background:#1f1530">
+          <div class="atty-initials">SA</div>
+          <div class="atty-name">Sophia Adeyemi</div>
+          <div class="atty-title">Partner — Family Law</div>
+        </div>
+        <div class="atty-body">
+          <div class="atty-spec"><span class="spec-tag">Family Law</span><span class="spec-tag">Divorce</span><span class="spec-tag">Child Custody</span></div>
+          <p class="atty-bio">NYU Law, J.D. summa cum laude. Regarded as one of the most effective family law advocates in the country. Has represented A-list celebrities, corporate executives, and political figures in high-profile divorce proceedings. Known for achieving settlements that protect children's welfare and financial futures.</p>
+          <div class="atty-meta">
+            <div class="atty-meta-item"><strong>15</strong><span>Years Exp.</span></div>
+            <div class="atty-meta-item"><strong>400+</strong><span>Matters</span></div>
+            <div class="atty-meta-item"><strong>Best</strong><span>Lawyers 2024</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="atty-card reveal" data-area="ip">
+        <div class="atty-head" style="background:#0d2218">
+          <div class="atty-initials">MW</div>
+          <div class="atty-name">Marcus Whitfield</div>
+          <div class="atty-title">Partner — Intellectual Property</div>
+        </div>
+        <div class="atty-body">
+          <div class="atty-spec"><span class="spec-tag">Patents</span><span class="spec-tag">Trademarks</span><span class="spec-tag">IP Litigation</span></div>
+          <p class="atty-bio">MIT B.S. in Electrical Engineering, Stanford Law J.D. Dual-qualified engineer and attorney with deep technical expertise in software, biotech, and semiconductor patents. Has secured patent portfolios valued in excess of $800M for tech and pharmaceutical clients. Recognized by IAM Patent 1000.</p>
+          <div class="atty-meta">
+            <div class="atty-meta-item"><strong>14</strong><span>Years Exp.</span></div>
+            <div class="atty-meta-item"><strong>900+</strong><span>Patents Filed</span></div>
+            <div class="atty-meta-item"><strong>IAM</strong><span>Patent 1000</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="atty-card reveal" data-area="criminal">
+        <div class="atty-head" style="background:#1e1208">
+          <div class="atty-initials">KO</div>
+          <div class="atty-name">Katherine O'Brien</div>
+          <div class="atty-title">Associate Partner — Criminal Defense</div>
+        </div>
+        <div class="atty-body">
+          <div class="atty-spec"><span class="spec-tag">White-Collar Crime</span><span class="spec-tag">Fraud</span><span class="spec-tag">RICO</span></div>
+          <p class="atty-bio">Boston College Law, J.D. Honours. Former prosecutor in the Manhattan District Attorney's Office, specialising in financial crimes. Her insider knowledge of prosecutorial strategy is an invaluable asset in complex white-collar defense. Has secured outright dismissals in 14 consecutive federal fraud matters.</p>
+          <div class="atty-meta">
+            <div class="atty-meta-item"><strong>12</strong><span>Years Exp.</span></div>
+            <div class="atty-meta-item"><strong>180+</strong><span>Cases</span></div>
+            <div class="atty-meta-item"><strong>Super</strong><span>Lawyers 2024</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="atty-card reveal" data-area="immigration">
+        <div class="atty-head" style="background:#0a1f2e">
+          <div class="atty-initials">DT</div>
+          <div class="atty-name">Daniel Thornton</div>
+          <div class="atty-title">Senior Associate — Immigration</div>
+        </div>
+        <div class="atty-body">
+          <div class="atty-spec"><span class="spec-tag">Business Immigration</span><span class="spec-tag">Visas</span><span class="spec-tag">Asylum</span></div>
+          <p class="atty-bio">Fordham Law, J.D. Specialises in corporate immigration for Fortune 500 companies and high-net-worth individuals. Successfully handled over 1,000 visa and residency applications across the US, UK, and EU. Recognized by the American Immigration Lawyers Association as a "Rising Star" in 2022 and 2023.</p>
+          <div class="atty-meta">
+            <div class="atty-meta-item"><strong>9</strong><span>Years Exp.</span></div>
+            <div class="atty-meta-item"><strong>1,000+</strong><span>Applications</span></div>
+            <div class="atty-meta-item"><strong>AILA</strong><span>Rising Star</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="atty-card reveal" data-area="corporate">
+        <div class="atty-head" style="background:#1a0f2e">
+          <div class="atty-initials">LF</div>
+          <div class="atty-name">Layla Fontaine</div>
+          <div class="atty-title">Senior Associate — Real Estate</div>
+        </div>
+        <div class="atty-body">
+          <div class="atty-spec"><span class="spec-tag">Real Estate</span><span class="spec-tag">Commercial Property</span><span class="spec-tag">REITs</span></div>
+          <p class="atty-bio">Columbia Law, J.D. Advised on over $3.2B in commercial real estate transactions spanning office, retail, hospitality, and mixed-use developments. Recognised for her expertise in complex ground lease structures and public-private development partnerships in New York, Miami, and London markets.</p>
+          <div class="atty-meta">
+            <div class="atty-meta-item"><strong>11</strong><span>Years Exp.</span></div>
+            <div class="atty-meta-item"><strong>$3.2B+</strong><span>Transactions</span></div>
+            <div class="atty-meta-item"><strong>Rising</strong><span>Star 2023</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- JOIN US -->
+<section style="background:var(--navy);padding:5rem 0;text-align:center">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Careers</div>
+    <h2 style="font-family:var(--font-serif);font-size:clamp(2rem,4vw,3rem);color:var(--white);margin-bottom:1rem">Join Our Legal Team</h2>
+    <p style="color:rgba(255,255,255,0.6);max-width:540px;margin:0 auto 2.5rem;line-height:1.8">Summit & Clarke is always seeking extraordinary legal talent. If you are driven by excellence and share our commitment to justice, we invite you to explore opportunities with us.</p>
+    <a href="contact.html" class="btn-gold">View Open Positions</a>
+  </div>
+</section>
+
+<section class="newsletter-section">
+  <div class="container newsletter-inner">
+    <div><h3>Stay Informed on Legal Developments</h3><p>Subscribe to our quarterly legal briefing for insights, case updates, and regulatory news.</p></div>
+    <form class="newsletter-form" onsubmit="submitNewsletter(event)"><input type="email" placeholder="Your professional email address" required /><button type="submit" class="btn-gold">Subscribe</button></form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand"><div class="logo" style="margin-bottom:1rem"><span class="logo-icon">⚖</span><div><div class="logo-main">Summit & Clarke</div><div class="logo-sub">Legal Associates</div></div></div><p>Providing world-class legal representation with integrity, precision, and an unwavering commitment to justice since 1998.</p><a href="#" class="btn-outline-sm">⬇ Download Brochure</a></div>
+    <div class="footer-col"><h4>Practice Areas</h4><ul><li><a href="services.html">Corporate Law</a></li><li><a href="services.html">Criminal Defense</a></li><li><a href="services.html">Family Law</a></li><li><a href="services.html">Immigration Law</a></li><li><a href="services.html">Real Estate Law</a></li><li><a href="services.html">Intellectual Property</a></li></ul></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="about.html">About the Firm</a></li><li><a href="attorneys.html">Our Attorneys</a></li><li><a href="cases.html">Case Results</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul class="footer-contact"><li>📍 1221 Avenue of the Americas,<br/>New York, NY 10020</li><li>📞 +1 (212) 540-7800</li><li>✉ counsel@summitclarke.com</li><li>🕐 Mon–Fri: 8:00 AM – 7:00 PM</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2024 Summit & Clarke Legal Associates. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p></div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+function filterAttorneys(area, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.atty-card').forEach(card => {
+    if (area === 'all' || card.dataset.area === area) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>

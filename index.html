@@ -1,10 +1,330 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My DevOps Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Summit & Clarke Legal Associates | Justice You Can Trust</title>
+  <meta name="description" content="Summit & Clarke Legal Associates — a premier international law firm delivering exceptional legal counsel with integrity, precision, and results." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Hello from my DevOps project!</h1>
-    <p>This website is running inside Docker.</p>
+
+<!-- LIVE CHAT BUBBLE -->
+<div class="chat-bubble" id="chatBubble" onclick="toggleChat()">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <span>Live Support</span>
+    <button onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-body">
+    <div class="chat-msg bot">Hello! Welcome to Summit & Clarke. How can we assist you today?</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" placeholder="Type a message…" id="chatInput" onkeydown="sendChat(event)" />
+    <button onclick="sendChat({key:'Enter'})">→</button>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">⚖</span>
+      <div>
+        <div class="logo-main">Summit & Clarke</div>
+        <div class="logo-sub">Legal Associates</div>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="attorneys.html">Attorneys</a></li>
+      <li><a href="cases.html">Case Results</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Book Consultation</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Established 1998 · International Legal Excellence</div>
+    <h1 class="hero-title">Justice You Can Trust.<br /><em>Results You Can Rely On.</em></h1>
+    <p class="hero-sub">Summit & Clarke Legal Associates provides world-class legal representation to individuals, corporations, and governments across six continents. Our commitment to justice is unwavering.</p>
+    <div class="hero-btns">
+      <a href="contact.html" class="btn-gold">Book a Consultation</a>
+      <a href="services.html" class="btn-outline">View Our Services</a>
+    </div>
+    
+</section>
+
+
+<!-- MARQUEE BAR -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span>Corporate Law</span><span class="sep">◆</span>
+    <span>Criminal Defense</span><span class="sep">◆</span>
+    <span>Family Law</span><span class="sep">◆</span>
+    <span>Immigration Law</span><span class="sep">◆</span>
+    <span>Real Estate Law</span><span class="sep">◆</span>
+    <span>Intellectual Property</span><span class="sep">◆</span>
+    <span>Corporate Law</span><span class="sep">◆</span>
+    <span>Criminal Defense</span><span class="sep">◆</span>
+    <span>Family Law</span><span class="sep">◆</span>
+    <span>Immigration Law</span><span class="sep">◆</span>
+    <span>Real Estate Law</span><span class="sep">◆</span>
+    <span>Intellectual Property</span><span class="sep">◆</span>
+  </div>
+</div>
+
+<!-- PRACTICE AREAS -->
+<section class="section practice-areas">
+  <div class="container">
+    <div class="section-label">Our Expertise</div>
+    
+      <a href="services.html" class="practice-card">
+        <div class="practice-icon">🏛</div>
+        <h3>Corporate Law</h3>
+        <p>Strategic counsel for mergers, acquisitions, governance, and complex business transactions worldwide.</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a href="services.html" class="practice-card">
+        <div class="practice-icon">⚖</div>
+        <h3>Criminal Defense</h3>
+        <p>Aggressive, thorough defense representation protecting your rights at every stage of the legal process.</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a href="services.html" class="practice-card">
+        <div class="practice-icon">👨‍👩‍👧</div>
+        <h3>Family Law</h3>
+        <p>Compassionate guidance through divorce, custody, adoption, and all sensitive family legal matters.</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a href="services.html" class="practice-card">
+        <div class="practice-icon">🌍</div>
+        <h3>Immigration Law</h3>
+        <p>Expert navigation of visas, citizenship, asylum, and complex international immigration procedures.</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a href="services.html" class="practice-card">
+        <div class="practice-icon">🏠</div>
+        <h3>Real Estate Law</h3>
+        <p>Comprehensive legal support for property acquisitions, disputes, developments, and commercial leases.</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a href="services.html" class="practice-card">
+        <div class="practice-icon">💡</div>
+        <h3>Intellectual Property</h3>
+        <p>Protecting your innovations, trademarks, copyrights, and trade secrets in a competitive global market.</p>
+        <span class="card-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section why-us">
+  <div class="container why-container">
+    <div class="why-image">
+      <div class="why-img-block">
+        <div class="why-img-inner"></div>
+        <div class="why-badge-float">
+          <span class="wbf-num">98%</span>
+          <span class="wbf-label">Success Rate</span>
+        </div>
+      </div>
+    </div>
+    <div class="why-content">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title" style="text-align:left">A Legacy of Legal Excellence</h2>
+      <p>For over two decades, Summit & Clarke Legal Associates has stood at the forefront of international legal practice. Our attorneys combine deep subject-matter expertise with a relentless drive to achieve superior outcomes for every client.</p>
+      <ul class="why-list">
+        <li><span class="why-check">✓</span> Award-winning legal team recognized by Chambers Global</li>
+        <li><span class="why-check">✓</span> Represented clients in 60+ countries across all major jurisdictions</li>
+        <li><span class="why-check">✓</span> Dedicated case management with transparent communication</li>
+        <li><span class="why-check">✓</span> Confidential consultations with senior partners</li>
+        <li><span class="why-check">✓</span> Fixed-fee arrangements available for eligible matters</li>
+      </ul>
+      <a href="about.html" class="btn-gold">Discover Our Firm</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials">
+  <div class="container">
+    <div class="section-label">Client Voices</div>
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="testi-slider" id="testiSlider">
+      <div class="testi-card active">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Summit & Clarke handled our multinational merger with extraordinary precision. Their cross-border expertise and meticulous attention to regulatory detail gave our board complete confidence throughout the entire process."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MH</div>
+          <div><strong>Marcus Harrington</strong><br/><small>CEO, Harrington Global Industries</small></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"When I faced serious criminal charges, I was terrified. The team at Summit & Clarke fought relentlessly on my behalf. The charges were dropped. I cannot express my gratitude enough — they gave me my life back."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SR</div>
+          <div><strong>Sofia Reyes</strong><br/><small>Private Client</small></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"The immigration team secured permanent residency for our entire senior management team across three countries. Their knowledge of international law is unmatched. We consider them an indispensable partner."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">DK</div>
+          <div><strong>Dr. David Köhler</strong><br/><small>Founder, Apex Technologies GmbH</small></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Navigating a difficult divorce with children involved was emotionally overwhelming. Summit & Clarke's family law team handled everything with compassion and professionalism. I felt genuinely supported at every stage."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AL</div>
+          <div><strong>Amelia Laurent</strong><br/><small>Private Client</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-dots" id="testiDots">
+      <button class="dot active" onclick="goToSlide(0)"></button>
+      <button class="dot" onclick="goToSlide(1)"></button>
+      <button class="dot" onclick="goToSlide(2)"></button>
+      <button class="dot" onclick="goToSlide(3)"></button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section">
+  <div class="container">
+    <div class="section-label">Common Questions</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          How do I schedule an initial consultation?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">You may schedule a consultation by completing our online contact form, calling our main office at +1 (212) 540-7800, or visiting our office in person during business hours. Initial consultations with a senior attorney are available within 48 hours.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          What are your fee structures?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">We offer flexible fee arrangements including hourly billing, fixed-fee packages for defined matters, and contingency arrangements for select litigation cases. All fee structures are discussed transparently during the initial consultation.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Do you handle international cases?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Yes. Summit & Clarke maintains offices in New York, London, Singapore, and Dubai, and works with affiliated counsel in over 60 jurisdictions. We are fully equipped to manage complex cross-border legal matters.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Is my consultation confidential?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Absolutely. All communications with our attorneys are protected by attorney-client privilege from the very first consultation. Your privacy and confidentiality are our paramount concern.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Can I switch attorneys or firms mid-case?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">You have the right to change legal representation at any time. If you are considering transferring a matter to Summit & Clarke, we offer confidential transition consultations to assess your case and advise on the best path forward.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          What documents should I bring to a consultation?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">We recommend bringing any relevant contracts, correspondence, court notices, identification documents, and a brief written summary of your matter. This allows our attorneys to provide the most informed preliminary assessment during your first meeting.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="container newsletter-inner">
+    <div>
+      <h3>Stay Informed on Legal Developments</h3>
+      <p>Subscribe to our quarterly legal briefing for insights, case updates, and regulatory news.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="submitNewsletter(event)">
+      <input type="email" placeholder="Your professional email address" required />
+      <button type="submit" class="btn-gold">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:1rem">
+        <span class="logo-icon">⚖</span>
+        <div>
+          <div class="logo-main">Summit & Clarke</div>
+          <div class="logo-sub">Legal Associates</div>
+        </div>
+      </div>
+      <p>Providing world-class legal representation with integrity, precision, and an unwavering commitment to justice since 1998.</p>
+      <a href="assets/brochure.pdf" class="btn-outline-sm" download>⬇ Download Brochure</a>
+    </div>
+    <div class="footer-col">
+      <h4>Practice Areas</h4>
+      <ul>
+        <li><a href="services.html">Corporate Law</a></li>
+        <li><a href="services.html">Criminal Defense</a></li>
+        <li><a href="services.html">Family Law</a></li>
+        <li><a href="services.html">Immigration Law</a></li>
+        <li><a href="services.html">Real Estate Law</a></li>
+        <li><a href="services.html">Intellectual Property</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="about.html">About the Firm</a></li>
+        <li><a href="attorneys.html">Our Attorneys</a></li>
+        <li><a href="cases.html">Case Results</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-contact">
+        <li>📍 1221 Avenue of the Americas,<br/>New York, NY 10020</li>
+        <li>📞 +1 (212) 540-7800</li>
+        <li>✉ counsel@summitclarke.com</li>
+        <li>🕐 Mon–Fri: 8:00 AM – 7:00 PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Summit & Clarke Legal Associates. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Developed by SOULWP TEAM</a></p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>

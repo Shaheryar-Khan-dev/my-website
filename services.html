@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Summit & Clarke Legal Associates</title>
+  <meta name="description" content="Comprehensive legal services from Summit & Clarke — Corporate Law, Criminal Defense, Family Law, Immigration, Real Estate, and Intellectual Property." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="chat-bubble" onclick="toggleChat()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="chat-window" id="chatWindow"><div class="chat-header"><span>Live Support</span><button onclick="toggleChat()">✕</button></div><div class="chat-body"><div class="chat-msg bot">Hello! How can we assist you today?</div></div><div class="chat-input"><input type="text" placeholder="Type a message…" id="chatInput" onkeydown="sendChat(event)" /><button onclick="sendChat({key:'Enter'})">→</button></div></div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">⚖</span><div><div class="logo-main">Summit & Clarke</div><div class="logo-sub">Legal Associates</div></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html" class="active">Services</a></li><li><a href="attorneys.html">Attorneys</a></li><li><a href="cases.html">Case Results</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Book Consultation</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-label">Legal Services</div>
+  <h1>Our Practice Areas</h1>
+  <p>We provide comprehensive legal counsel across a wide range of disciplines, offering tailored, strategic solutions to complex legal challenges worldwide.</p>
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Services</span></div>
+</header>
+
+<!-- INTRO -->
+<section class="section" style="background:var(--offwhite);padding-bottom:2rem">
+  <div class="container" style="text-align:center">
+    <p style="font-family:var(--font-serif);font-size:1.2rem;color:var(--gray-text);max-width:760px;margin:0 auto;line-height:1.9;font-style:italic">"At Summit & Clarke, we do not simply practice law — we practice the art of advocacy. Each client engagement is approached with the full weight of our collective expertise, and an unrelenting drive to deliver the best possible outcome."</p>
+    <p style="margin-top:1rem;font-size:0.85rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase">— Eleanor Summit, Founding Senior Partner</p>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="section" style="background:var(--white)">
+  <div class="container">
+    <div class="service-grid">
+
+      <div class="service-card reveal">
+        <div class="service-card-icon">🏛</div>
+        <h3>Corporate Law</h3>
+        <p>Our corporate law practice represents multinational corporations, private equity firms, emerging-growth companies, and governmental entities in transactions of every scale and complexity. We provide strategic counsel on mergers and acquisitions, corporate governance, securities compliance, joint ventures, restructuring, and commercial contracts. Our attorneys have closed deals in excess of $50 billion across six continents, navigating complex cross-border regulatory frameworks with precision and efficiency.</p>
+        <p style="margin-top:1rem;font-size:0.9rem;color:var(--gray-text)">Key areas include: M&A advisory, due diligence, shareholder agreements, board governance, SEC compliance, and IPO counsel.</p>
+        <span class="service-tag">→ Learn More</span>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-card-icon">⚖</div>
+        <h3>Criminal Defense</h3>
+        <p>When freedom is at stake, experience is everything. Our criminal defense team has defended clients in federal and state courts against the full spectrum of charges — from white-collar fraud and RICO offences to violent crimes and drug trafficking. We conduct exhaustive case investigations, challenge unlawful evidence, and build defenses that put the prosecution to its full proof. Our approach is aggressive, methodical, and always focused on the best achievable outcome for our client.</p>
+        <p style="margin-top:1rem;font-size:0.9rem;color:var(--gray-text)">Key areas include: Federal criminal defense, white-collar crime, fraud, DUI/DWI defense, appeals, and pre-charge investigations.</p>
+        <span class="service-tag">→ Learn More</span>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-card-icon">👨‍👩‍👧</div>
+        <h3>Family Law</h3>
+        <p>Family legal matters demand both legal precision and profound human sensitivity. Our family law team provides compassionate, highly effective representation in divorce proceedings, child custody and support disputes, alimony negotiations, adoption, prenuptial agreements, and domestic relations matters. We approach every case with discretion and with a deep understanding of the emotional complexity our clients are navigating — always striving for resolutions that protect your family's future.</p>
+        <p style="margin-top:1rem;font-size:0.9rem;color:var(--gray-text)">Key areas include: Divorce, child custody, spousal support, property division, adoption, and guardianship.</p>
+        <span class="service-tag">→ Learn More</span>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-card-icon">🌍</div>
+        <h3>Immigration Law</h3>
+        <p>In an increasingly complex global regulatory environment, immigration matters require both technical mastery and a comprehensive understanding of international law. Our immigration practice assists corporations, executives, skilled workers, and families with visa applications, work permits, permanent residency, naturalization, deportation defense, and asylum proceedings. We operate across the US, UK, EU, Singapore, and UAE immigration systems with deep expertise and a strong track record of success.</p>
+        <p style="margin-top:1rem;font-size:0.9rem;color:var(--gray-text)">Key areas include: Corporate immigration, EB-1/EB-2 visas, O-1 visas, asylum, deportation defense, and citizenship applications.</p>
+        <span class="service-tag">→ Learn More</span>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-card-icon">🏠</div>
+        <h3>Real Estate Law</h3>
+        <p>Whether you are acquiring a landmark commercial property, structuring a real estate investment trust, or resolving a complex title dispute, Summit & Clarke's real estate team provides comprehensive transactional and litigation support across all property classes. Our attorneys advise on residential and commercial acquisitions, construction contracts, leasing, zoning and land-use approvals, foreclosure proceedings, and real estate finance across domestic and international markets.</p>
+        <p style="margin-top:1rem;font-size:0.9rem;color:var(--gray-text)">Key areas include: Commercial acquisitions, lease negotiation, title disputes, REITs, construction law, and zoning matters.</p>
+        <span class="service-tag">→ Learn More</span>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-card-icon">💡</div>
+        <h3>Intellectual Property Law</h3>
+        <p>In today's knowledge economy, your intellectual assets are among your most valuable. Our IP practice provides comprehensive protection and enforcement of patents, trademarks, copyrights, trade secrets, and licensing arrangements. We represent inventors, tech companies, media conglomerates, and global brands — from initial registration and prosecution through complex infringement litigation and inter partes review proceedings before the USPTO and international tribunals.</p>
+        <p style="margin-top:1rem;font-size:0.9rem;color:var(--gray-text)">Key areas include: Patent prosecution, trademark registration, copyright enforcement, trade secret protection, and IP licensing.</p>
+        <span class="service-tag">→ Learn More</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section style="background:var(--navy);padding:5rem 0;text-align:center">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Ready to Proceed?</div>
+    <h2 style="font-family:var(--font-serif);font-size:clamp(2rem,4vw,3rem);color:var(--white);margin-bottom:1.25rem">Schedule a Confidential Consultation</h2>
+    <p style="color:rgba(255,255,255,0.6);max-width:540px;margin:0 auto 2.5rem;line-height:1.8">Our attorneys are available for confidential consultations within 48 hours. Speak directly with a senior partner about your matter.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="contact.html" class="btn-gold">Book a Consultation</a>
+      <a href="attorneys.html" class="btn-outline">Meet Our Attorneys</a>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-section">
+  <div class="container newsletter-inner">
+    <div><h3>Stay Informed on Legal Developments</h3><p>Subscribe to our quarterly legal briefing for insights, case updates, and regulatory news.</p></div>
+    <form class="newsletter-form" onsubmit="submitNewsletter(event)"><input type="email" placeholder="Your professional email address" required /><button type="submit" class="btn-gold">Subscribe</button></form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand"><div class="logo" style="margin-bottom:1rem"><span class="logo-icon">⚖</span><div><div class="logo-main">Summit & Clarke</div><div class="logo-sub">Legal Associates</div></div></div><p>Providing world-class legal representation with integrity, precision, and an unwavering commitment to justice since 1998.</p><a href="#" class="btn-outline-sm">⬇ Download Brochure</a></div>
+    <div class="footer-col"><h4>Practice Areas</h4><ul><li><a href="services.html">Corporate Law</a></li><li><a href="services.html">Criminal Defense</a></li><li><a href="services.html">Family Law</a></li><li><a href="services.html">Immigration Law</a></li><li><a href="services.html">Real Estate Law</a></li><li><a href="services.html">Intellectual Property</a></li></ul></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="about.html">About the Firm</a></li><li><a href="attorneys.html">Our Attorneys</a></li><li><a href="cases.html">Case Results</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul class="footer-contact"><li>📍 1221 Avenue of the Americas,<br/>New York, NY 10020</li><li>📞 +1 (212) 540-7800</li><li>✉ counsel@summitclarke.com</li><li>🕐 Mon–Fri: 8:00 AM – 7:00 PM</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2024 Summit & Clarke Legal Associates. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p></div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
