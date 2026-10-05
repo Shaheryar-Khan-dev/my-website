@@ -1,0 +1,7 @@
+services:
+  website:
+    build: .
+    image: my-website
+    container_name: compose-website
+    ports:
+      - "8082:80"

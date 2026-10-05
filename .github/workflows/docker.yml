@@ -1,0 +1,32 @@
+```yaml
+name: Docker CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t my-website:latest .
+
+      - name: Test Docker image
+        run: docker run -d --name my-website-test -p 8080:80 my-website:latest
+
+      - name: Check website
+        run: curl --fail http://localhost:8080
+
+      - name: Stop test container
+        if: always()
+        run: docker rm -f my-website-test
+```
