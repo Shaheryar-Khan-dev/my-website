@@ -20,13 +20,12 @@ jobs:
       - name: Build Docker image
         run: docker build -t my-website:latest .
 
-      - name: Test Docker image
+      - name: Run container
         run: docker run -d --name my-website-test -p 8080:80 my-website:latest
 
-      - name: Check website
+      - name: Test website
         run: curl --fail http://localhost:8080
 
-      - name: Stop test container
+      - name: Remove test container
         if: always()
         run: docker rm -f my-website-test
-```
