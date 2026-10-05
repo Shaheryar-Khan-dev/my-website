@@ -1,4 +1,3 @@
-```yaml
 name: Docker CI
 
 on:
